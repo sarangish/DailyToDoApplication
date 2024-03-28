@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ToDoApplication</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ToDoApplication.styles.css" asp-append-version="true" />
+    <style>
+        
+        
+        /* Inline CSS styles */
+        .navbar-brand {
+            text-align: center; /* Center align the text */
+            width: 100%; /* Make the navbar-brand occupy full width */
+            font-weight: bold; /* Set font weight to bold */
+            font-size: 24px; /* Set font size to 24 pixels */
+            font-family: Bahnschrift, sans-serif; /* Set font family */
+            color: white; /* Set text color to white */
+        }
+
+        
+
+        .footer {
+            position: fixed; /* Fix the position of the footer */
+            left: 0;
+            bottom: 0;
+            height:10%;
+            width: 100%;
+            background-color: #f8f9fa; /* Set background color */
+            text-align: center;
+            padding: 10px 0; /* Add padding */
+            font-size: 8px; /* Adjust font size */
+            color: #6c757d; /* Adjust text color */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <a class="navbar-brand" asp-area="" asp-controller="ToDo" asp-action="Index">Daily To-Do Application</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        
+                    </ul>
+                </div>
+        </nav>
+    </header>
+    <div>
+       
+                <!-- Adjust column width and offset as needed -->
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - ToDoApplication
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿@model ToDoApplication.Models.ToDoItem
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Item</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: darkolivegreen;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 500px; /* Limit container width */
+            margin: 0 auto; /* Center container horizontally */
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>Add Item</h4>
+        <form asp-action="Add">
+            <div class="form-group">
+                <label>Description:</label>
+                <input type="text" asp-for="Description" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label>Due Date and Time:</label>
+                <input type="datetime-local" asp-for="DueDate" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+        <a href="@Url.Action("Index", "ToDo")" class="btn btn-secondary mt-3">Back to List</a>
+    </div>
+</body>
+</html>

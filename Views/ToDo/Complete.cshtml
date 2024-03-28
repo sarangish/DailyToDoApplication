@@ -1,0 +1,9 @@
+﻿@model ToDoApplication.Models.ToDoItem
+
+<h1>Complete To-Do Item</h1>
+
+<div>
+    <p>You have marked the following to-do item as complete:</p>
+    <p>@Model.Description</p>
+    <p><a href="@Url.Action("Index", "ToDo")">Back to List</a></p>
+</div>
